@@ -1,5 +1,6 @@
 public class MessageLoop implements Runnable {
     public void run() {
+        // messages that will be printed
         String importantInfo[] = {
                 "Mares eat oats",
                 "Does eat oats",
@@ -7,12 +8,11 @@ public class MessageLoop implements Runnable {
                 "A kid will eat ivy too"
         };
         try {
-            for (int i = 0;
-                 i < importantInfo.length;
-                 i++) {
+            //while i is less the the length of important info continue printing
+            for (int i = 0; i < importantInfo.length; i++) {
                 // Pause for 4 seconds
                 Thread.sleep(4000);
-                // Print a message
+                // Print a message from important info
                 SimpleThreads.threadMessage(importantInfo[i]);
             }
         } catch (InterruptedException e) {
