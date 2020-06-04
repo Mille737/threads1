@@ -5,19 +5,7 @@ public class Main {
         // we interrupt MessageLoop
         // thread (default one hour = patience).
         long patience = 1000 * 60 * 60;
-
-        // If command line argument
-        // present, gives patience
-        // in seconds.
-        if (args.length > 0) {
-            try {
-                patience = Long.parseLong(args[0]) * 1000;
-            } catch (NumberFormatException e) {
-                System.err.println("Argument must be an integer.");
-                System.exit(1);
-            }
-        }
-
+        //calls the thread number and message
         SimpleThreads.threadMessage("Starting MessageLoop thread");
         long startTime = System.currentTimeMillis();
         Thread t = new Thread(new MessageLoop());
